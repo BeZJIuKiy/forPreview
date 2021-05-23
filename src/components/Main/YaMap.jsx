@@ -4,36 +4,26 @@ import './yaMap.css';
 
 export const YaMap = () => {
 
-    const mapCenter = () => ({
+    const mapCenter = {
         center: [45.177910, 36.616308],
-        zoom: 10,
-    })
-    const objectsCoordinates = () => {
-        return (
+        zoom: 12,
+    };
+
+    const coordinates = [
+        [45.157071, 36.587022],
+        [45.195504, 36.644513],
+    ];
+
+    const objectsCoordinates = coordinates.map((coordinate) =>
             <div>
                 <Placemark
-                    geometry={[45.157071, 36.587022]}
+                    geometry={coordinate}
                     properties={{
                         hintContent: `123`,
-                        balloonContent: "",
+                        balloonContent: "241",
                     }}
                     options={{
-                        // preset: !c.link ? portIcon.map : cameraIcon.map,
-                        iconColor: '#ffba00'
-                    }}
-                    modules={
-                        ['geoObject.addon.balloon', 'geoObject.addon.hint']
-                    }
-                />
-
-                <Placemark
-                    geometry={[45.195504, 36.644513]}
-                    properties={{
-                        hintContent: `123`,
-                        balloonContent: "",
-                    }}
-                    options={{
-                        // preset: !c.link ? portIcon.map : cameraIcon.map,
+                        preset: "islands#redCircleDotIcon",
                         iconColor: '#ffba00'
                     }}
                     modules={
@@ -41,32 +31,17 @@ export const YaMap = () => {
                     }
                 />
             </div>
-        )
-    };
+    )
 
     return (
         <div className={`yamap show`}>
             <YMaps query={{lang: "en_US"}}>
                 <Map className='yamap__item'
-                     state={{
-                         center: [45.177910, 36.616308],
-                         zoom: 10,
-                     }}>
+                     state={mapCenter}>
                     {objectsCoordinates}
                 </Map>
 
             </YMaps>
         </div>
-        // <div>
-        //     <YMaps query={{lang: "en_US"}}>
-        //         <Map state={{
-        //             center: [45.177910, 36.616308],
-        //             zoom: 10,
-        //         }}>
-        //             {objectsCoordinates}
-        //         </Map>
-        //
-        //     </YMaps>
-        // </div>
     )
 };

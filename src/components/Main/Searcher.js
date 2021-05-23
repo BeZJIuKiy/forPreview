@@ -46,7 +46,7 @@ export const SearcherObjects = () => {
             renderInput={(params) => (
                 <TextField
                     {...params}
-                    label="Choose a object"
+                    label="IMEI"
                     variant="outlined"
                     color={"secondary"}
                     inputProps={{
