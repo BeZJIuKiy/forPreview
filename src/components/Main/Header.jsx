@@ -68,7 +68,8 @@ export const Header = () => {
     return (
         <div className={classes.grow}>
             {/* <AppBar position="static" color="red"> */}
-            <AppBar position="static" style={{background: '#5f5f5f'}}>
+            {/*<AppBar position="static" style={{background: '#5f5f5f'}}>*/}
+            <AppBar position="static" style={{background: '#0D0D30 '}}>
                 <Toolbar>
                     <NavLink className={'navButtonsHome'} to="/">
                         {"AI-Platform"}
@@ -92,7 +93,6 @@ export const Header = () => {
                             onClick={handleProfileMenuOpen}
                             color="inherit"
                         >
-                            {/* <AccountCircle /> */}
                             <img className='header_profile__icon'
                                  src={userAvatar} alt=""/>
                         </IconButton>

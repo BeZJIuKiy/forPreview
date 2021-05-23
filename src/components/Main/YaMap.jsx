@@ -14,7 +14,7 @@ export const YaMap = () => {
         [45.195504, 36.644513],
     ];
 
-    const objectsCoordinates = coordinates.map((coordinate) =>
+    const objectsCoordinates = coordinates.map((coordinate, i) =>
             <div>
                 <Placemark
                     geometry={coordinate}
@@ -23,8 +23,10 @@ export const YaMap = () => {
                         balloonContent: "241",
                     }}
                     options={{
-                        preset: "islands#redCircleDotIcon",
-                        iconColor: '#ffba00'
+                        // preset: "islands#redCircleDotIcon",
+                        preset: i ? "islands#blueAutoIcon" : "islands#blueWaterwayIcon",
+                        // iconColor: '#ffba00'
+                        iconColor: 'blue'
                     }}
                     modules={
                         ['geoObject.addon.balloon', 'geoObject.addon.hint']

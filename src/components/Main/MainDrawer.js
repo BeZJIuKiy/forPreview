@@ -26,9 +26,10 @@ import NotificationsIcon from "@material-ui/icons/Notifications";
 import IconButton from "@material-ui/core/IconButton";
 import DirectionsBoatIcon from '@material-ui/icons/DirectionsBoat';
 import {SearcherObjects} from "./Searcher";
+import {CustomizedProgressBars} from "./ProgressBar";
 
 
-const drawerWidth = 240;
+const drawerWidth = 260;
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -36,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: "column",
         width: '100%',
         maxWidth: 360,
-        // backgroundColor: theme.palette.background.paper,
+
     },
     appBar: {
         // zIndex: theme.zIndex.drawer + 1,
@@ -47,31 +48,40 @@ const useStyles = makeStyles((theme) => ({
     },
     drawerPaper: {
         width: drawerWidth,
-        zIndex: -1,
+        height: "80vh",
+        top: "80px",
+        left: "36px",
+        zIndex: 1,
     },
     drawerContainer: {
         overflow: 'auto',
     },
-    content: {
-        flexGrow: 1,
-        padding: theme.spacing(3),
-    },
+    // content: {
+    //     flexGrow: 1,
+    //     padding: theme.spacing(3),
+    // },
     nestedGood: {
+        padding: 0,
+        margin: 0,
         paddingLeft: theme.spacing(4),
         paddingRight: theme.spacing(0),
-        background: "linear-gradient(to right, #67E667, #00CC00)",
+        // background: "linear-gradient(to right, #67E667, #00CC00)",
     },
 
     nestedWarning: {
+        padding: 0,
+        margin: 0,
         paddingLeft: theme.spacing(4),
         paddingRight: theme.spacing(0),
-        background: "linear-gradient(to right, #FFE773, #FFD300)",
+        // background: "linear-gradient(to right, #FFE773, #FFD300)",
     },
 
     nestedReplace: {
+        padding: 0,
+        margin: 0,
         paddingLeft: theme.spacing(4),
         paddingRight: theme.spacing(0),
-        background: "linear-gradient(to right, #FF0000, #FF7373)",
+        // background: "linear-gradient(to right, #FF0000, #FF7373)",
     },
 }));
 
@@ -95,33 +105,15 @@ export const MainDrawer = () => {
                 paper: classes.drawerPaper,
             }}
         >
-            <Toolbar/>
+            {/*<Toolbar/> Пустое пространство НАД*/}
             <div className={classes.drawerContainer}>
                 <List
                     component="nav"
                     aria-labelledby="nested-list-subheader"
-
-                    // subheader={
-                    //     <ListSubheader component="div" id="nested-list-subheader">
-                    //         Nested List Items
-                    //     </ListSubheader>
-                    // }
                     className={classes.root}
                 >
-                    {/*<ListItem button>*/}
-                    {/*    <ListItemIcon>*/}
-                    {/*        <SendIcon/>*/}
-                    {/*    </ListItemIcon>*/}
-                    {/*    <ListItemText primary="Sent mail"/>*/}
-                    {/*</ListItem>*/}
-                    {/*<ListItem button>*/}
-                    {/*    <ListItemIcon>*/}
-                    {/*        <DraftsIcon/>*/}
-                    {/*    </ListItemIcon>*/}
-                    {/*    <ListItemText primary="Drafts"/>*/}
-                    {/*</ListItem>*/}
                     <ListItem>
-                        <SearcherObjects />
+                        <SearcherObjects/>
                     </ListItem>
 
                     <ListItem button onClick={handleClick}>
@@ -161,15 +153,18 @@ export const MainDrawer = () => {
                                     <BuildIcon color={"action"}/>
                                 </ListItemIcon>
 
-                                <div>
+                                <div style={{width: "50%"}}>
                                     <ListItemText primary="Engine work"/>
-                                    <ListItemText secondary={"Total State: 88%"}/>
+                                    <CustomizedProgressBars
+                                        value={88}
+                                        color={'linear-gradient(to right, #67E667, #00CC00)'}
+                                    />
                                 </div>
 
-                                <IconButton color="inherit" style={{padding: "0px 0px 0px 10px"}}>
+                                <IconButton color="inherit" style={{padding: 0, margin: "auto"}}>
                                     <Badge badgeContent={1} color="secondary">
                                         <NavLink to='/events'>
-                                            <NotificationsIcon className='header__icons'/>
+                                            <NotificationsIcon color={"action"} className='header__icons'/>
                                         </NavLink>
                                     </Badge>
                                 </IconButton>
@@ -180,15 +175,18 @@ export const MainDrawer = () => {
                                     <BuildIcon color={"action"}/>
                                 </ListItemIcon>
 
-                                <div>
+                                <div style={{width: "50%"}}>
                                     <ListItemText primary="Fuel sensor"/>
-                                    <ListItemText secondary={"Total State: 58%"}/>
+                                    <CustomizedProgressBars
+                                        value={58}
+                                        color={"linear-gradient(to right, #FFE773, #FFD300)"}
+                                    />
                                 </div>
 
-                                <IconButton color="inherit" style={{padding: "0px 0px 0px 10px"}}>
+                                <IconButton color="inherit" style={{padding: 0, margin: "auto"}}>
                                     <Badge badgeContent={3} color="secondary">
                                         <NavLink to='/events'>
-                                            <NotificationsIcon className='header__icons'/>
+                                            <NotificationsIcon color={"action"} className='header__icons'/>
                                         </NavLink>
                                     </Badge>
                                 </IconButton>
@@ -199,15 +197,18 @@ export const MainDrawer = () => {
                                     <BuildIcon color={"action"}/>
                                 </ListItemIcon>
 
-                                <div>
+                                <div style={{width: "50%"}}>
                                     <ListItemText primary="Oxygen sensor"/>
-                                    <ListItemText secondary={"Total State: 26%"}/>
+                                    <CustomizedProgressBars
+                                        value={26}
+                                        color={"linear-gradient(to right, #FF0000, #FF7373)"}
+                                    />
                                 </div>
 
-                                <IconButton color="inherit" style={{padding: "0px 0px 0px 5px"}}>
-                                    <Badge badgeContent={19} color="secondary">
+                                <IconButton color="inherit" style={{padding: 0, margin: "auto"}}>
+                                    <Badge badgeContent={2} color="secondary">
                                         <NavLink to='/events'>
-                                            <NotificationsIcon className='header__icons'/>
+                                            <NotificationsIcon color={"action"} className='header__icons'/>
                                         </NavLink>
                                     </Badge>
                                 </IconButton>
@@ -257,10 +258,10 @@ export const MainDrawer = () => {
                                     <ListItemText secondary={"Total State: 88%"}/>
                                 </div>
 
-                                <IconButton color="inherit" style={{padding: "0px 0px 0px 10px"}}>
+                                <IconButton color="inherit" style={{padding: 0, margin: "auto"}}>
                                     <Badge badgeContent={1} color="secondary">
                                         <NavLink to='/events'>
-                                            <NotificationsIcon className='header__icons'/>
+                                            <NotificationsIcon color={"action"} className='header__icons'/>
                                         </NavLink>
                                     </Badge>
                                 </IconButton>
@@ -276,10 +277,10 @@ export const MainDrawer = () => {
                                     <ListItemText secondary={"Total State: 58%"}/>
                                 </div>
 
-                                <IconButton color="inherit" style={{padding: "0px 0px 0px 10px"}}>
+                                <IconButton color="inherit" style={{padding: 0, margin: "auto"}}>
                                     <Badge badgeContent={3} color="secondary">
                                         <NavLink to='/events'>
-                                            <NotificationsIcon className='header__icons'/>
+                                            <NotificationsIcon color={"action"} className='header__icons'/>
                                         </NavLink>
                                     </Badge>
                                 </IconButton>
@@ -295,10 +296,10 @@ export const MainDrawer = () => {
                                     <ListItemText secondary={"Total State: 26%"}/>
                                 </div>
 
-                                <IconButton color="inherit" style={{padding: "0px 0px 0px 5px"}}>
+                                <IconButton color="inherit" style={{padding: 0, margin: "auto"}}>
                                     <Badge badgeContent={19} color="secondary">
                                         <NavLink to='/events'>
-                                            <NotificationsIcon className='header__icons'/>
+                                            <NotificationsIcon color={"action"} className='header__icons'/>
                                         </NavLink>
                                     </Badge>
                                 </IconButton>
