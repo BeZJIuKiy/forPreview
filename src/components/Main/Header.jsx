@@ -10,7 +10,7 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import {NavLink} from 'react-router-dom';
 import './Header.css';
 
-export const userAvatar = 'https://img-premium.flaticon.com/png/512/3135/3135715.png?token=exp=1621712838~hmac=70a2b0f58c98e43a22a273ffa28475cf';
+import userAvatar from './profile.png';
 
 const useStyles = makeStyles((theme) => ({
     grow: {
@@ -91,7 +91,7 @@ export const Header = () => {
                             aria-controls={menuId}
                             aria-haspopup="true"
                             onClick={handleProfileMenuOpen}
-                            color="inherit"
+                            // style={{background: "lightgray"}}
                         >
                             <img className='header_profile__icon'
                                  src={userAvatar} alt=""/>
