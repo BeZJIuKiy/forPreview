@@ -30,10 +30,13 @@
 .navButtonsHome {
     font-size: 22px;
     font-weight: 400;
+
+    border-right: 2px solid #e5e5e5;
+    padding-right: 20px;
     
     margin: 0 10px;
     text-decoration: none;
-    color: inherit;
+    color: #555;
 }
 
 .menu__btn {
@@ -41,9 +44,10 @@
     color: inherit;
 }
 
-.header__icons {
-    color: #fff;
-}
+/*.header__icons {*/
+/*    color: #333;*/
+/*    text-decoration: none;*/
+/*}*/
 
 .header_profile__icon {
     width: 40px;

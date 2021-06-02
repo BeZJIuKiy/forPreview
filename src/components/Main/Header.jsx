@@ -8,9 +8,12 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import {NavLink} from 'react-router-dom';
+import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
+import ArrowDropUpIcon from '@material-ui/icons/ArrowDropUp';
 import './Header.css';
 
 import userAvatar from './profile.png';
+import {SearcherObjects} from "./Searcher";
 
 const useStyles = makeStyles((theme) => ({
     grow: {
@@ -68,20 +71,26 @@ export const Header = () => {
     return (
         <div className={classes.grow}>
             {/* <AppBar position="static" color="red"> */}
-            {/*<AppBar position="static" style={{background: '#5f5f5f'}}>*/}
-            <AppBar position="static" style={{background: '#0D0D30 '}}>
+            {/*<AppBar position="static" style={{background: '#0D0D30 '}}>*/}
+            <AppBar position="static" style={{background: '#fff '}}>
                 <Toolbar>
                     <NavLink className={'navButtonsHome'} to="/">
                         {"AI-Platform"}
                     </NavLink>
 
+                    <div style={{color: "black"}}>Ship 01</div>
+                    <IconButton>
+                        <ArrowDropDownIcon/>
+                    </IconButton>
+
                     <div className={classes.grow}/>
                     <div className={classes.sectionDesktop}>
 
                         <IconButton aria-label="show 17 new notifications" color="inherit">
-                            <Badge badgeContent={5} color="secondary">
+                            <Badge badgeContent={0} color="secondary">
                                 <NavLink to='/events'>
-                                    <NotificationsIcon className='header__icons'/>
+                                    {/*<NotificationsIcon className='header__icons'/>*/}
+                                    <NotificationsIcon color={"action"}/>
                                 </NavLink>
                             </Badge>
                         </IconButton>

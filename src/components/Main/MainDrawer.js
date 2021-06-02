@@ -29,7 +29,7 @@ import {SearcherObjects} from "./Searcher";
 import {CustomizedProgressBars} from "./ProgressBar";
 
 
-const drawerWidth = 260;
+const drawerWidth = 270;
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -37,29 +37,31 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: "column",
         width: '100%',
         maxWidth: 360,
-
     },
+
     appBar: {
         // zIndex: theme.zIndex.drawer + 1,
     },
+
     drawer: {
         width: drawerWidth,
         flexShrink: 0,
     },
+
     drawerPaper: {
         width: drawerWidth,
         height: "80vh",
-        top: "80px",
-        left: "36px",
+        top: "76px",
+        left: "8px",
         zIndex: 1,
+
+        // borderLeft: "2px solid #e5e5e5"
     },
+
     drawerContainer: {
         overflow: 'auto',
     },
-    // content: {
-    //     flexGrow: 1,
-    //     padding: theme.spacing(3),
-    // },
+
     nestedGood: {
         padding: 0,
         margin: 0,
@@ -73,7 +75,6 @@ const useStyles = makeStyles((theme) => ({
         margin: 0,
         paddingLeft: theme.spacing(4),
         paddingRight: theme.spacing(0),
-        // background: "linear-gradient(to right, #FFE773, #FFD300)",
     },
 
     nestedReplace: {
@@ -81,7 +82,6 @@ const useStyles = makeStyles((theme) => ({
         margin: 0,
         paddingLeft: theme.spacing(4),
         paddingRight: theme.spacing(0),
-        // background: "linear-gradient(to right, #FF0000, #FF7373)",
     },
 }));
 
@@ -105,211 +105,24 @@ export const MainDrawer = () => {
                 paper: classes.drawerPaper,
             }}
         >
-            {/*<Toolbar/> Пустое пространство НАД*/}
             <div className={classes.drawerContainer}>
                 <List
                     component="nav"
                     aria-labelledby="nested-list-subheader"
                     className={classes.root}
                 >
-                    <ListItem>
-                        <SearcherObjects/>
-                    </ListItem>
-
                     <ListItem button onClick={handleClick}>
                         <ListItemIcon>
-                            <DirectionsBoatIcon style={{color: "black", fontSize: "36px"}}/>
+                            <AssessmentOutlinedIcon color={"action"} />
                         </ListItemIcon>
                         <div className={classes.root}>
-                            <ListItemText primary="Object 01"/>
-                            <div>
-                                <ListItemIcon style={{
-                                    display: "flex",
-                                    justifyContent: "space-around",
-                                }}>
-                                    <GpsFixedIcon
-                                        color={"action"}
-                                        onClick={() => alert('GpsFixedIcon')}
-                                    />
-
-                                    <TrendingUpIcon
-                                        color={"action"}
-                                        onClick={() => alert('TrendingUpIcon')}
-                                    />
-
-                                    <AssessmentOutlinedIcon
-                                        color={"action"}
-                                        onClick={() => alert('AssessmentOutlinedIcon')}
-                                    />
-                                </ListItemIcon>
-                            </div>
+                            <ListItemText primary="Current data / Prediction" />
                         </div>
-                        {open ? <ExpandLess/> : <ExpandMore/>}
                     </ListItem>
-                    <Collapse in={open} timeout="auto" unmountOnExit>
-                        <List component="div" disablePadding>
-                            <ListItem button className={classes.nestedGood}>
-                                <ListItemIcon>
-                                    <BuildIcon color={"action"}/>
-                                </ListItemIcon>
-
-                                <div style={{width: "50%"}}>
-                                    <ListItemText primary="Engine work"/>
-                                    <CustomizedProgressBars
-                                        value={88}
-                                        color={'linear-gradient(to right, #67E667, #00CC00)'}
-                                    />
-                                </div>
-
-                                <IconButton color="inherit" style={{padding: 0, margin: "auto"}}>
-                                    <Badge badgeContent={1} color="secondary">
-                                        <NavLink to='/events'>
-                                            <NotificationsIcon color={"action"} className='header__icons'/>
-                                        </NavLink>
-                                    </Badge>
-                                </IconButton>
-                            </ListItem>
-
-                            <ListItem button className={classes.nestedWarning}>
-                                <ListItemIcon>
-                                    <BuildIcon color={"action"}/>
-                                </ListItemIcon>
-
-                                <div style={{width: "50%"}}>
-                                    <ListItemText primary="Fuel sensor"/>
-                                    <CustomizedProgressBars
-                                        value={58}
-                                        color={"linear-gradient(to right, #FFE773, #FFD300)"}
-                                    />
-                                </div>
-
-                                <IconButton color="inherit" style={{padding: 0, margin: "auto"}}>
-                                    <Badge badgeContent={3} color="secondary">
-                                        <NavLink to='/events'>
-                                            <NotificationsIcon color={"action"} className='header__icons'/>
-                                        </NavLink>
-                                    </Badge>
-                                </IconButton>
-                            </ListItem>
-
-                            <ListItem button className={classes.nestedReplace}>
-                                <ListItemIcon>
-                                    <BuildIcon color={"action"}/>
-                                </ListItemIcon>
-
-                                <div style={{width: "50%"}}>
-                                    <ListItemText primary="Oxygen sensor"/>
-                                    <CustomizedProgressBars
-                                        value={26}
-                                        color={"linear-gradient(to right, #FF0000, #FF7373)"}
-                                    />
-                                </div>
-
-                                <IconButton color="inherit" style={{padding: 0, margin: "auto"}}>
-                                    <Badge badgeContent={2} color="secondary">
-                                        <NavLink to='/events'>
-                                            <NotificationsIcon color={"action"} className='header__icons'/>
-                                        </NavLink>
-                                    </Badge>
-                                </IconButton>
-                            </ListItem>
-                        </List>
-                    </Collapse>
-
-                    <ListItem button onClick={handleClick2}>
-                        <ListItemIcon>
-                            <CommuteIcon style={{color: "black", fontSize: "36px"}}/>
-                        </ListItemIcon>
-                        <div className={classes.root}>
-                            <ListItemText primary="Object 02"/>
-                            <div>
-                                <ListItemIcon style={{
-                                    display: "flex",
-                                    justifyContent: "space-around",
-                                }}>
-                                    <GpsFixedIcon
-                                        color={"action"}
-                                        onClick={() => alert('GpsFixedIcon')}
-                                    />
-
-                                    <TrendingUpIcon
-                                        color={"action"}
-                                        onClick={() => alert('TrendingUpIcon')}
-                                    />
-
-                                    <AssessmentOutlinedIcon
-                                        color={"action"}
-                                        onClick={() => alert('AssessmentOutlinedIcon')}
-                                    />
-                                </ListItemIcon>
-                            </div>
-                        </div>
-                        {open2 ? <ExpandLess/> : <ExpandMore/>}
-                    </ListItem>
-                    <Collapse in={open2} timeout="auto" unmountOnExit>
-                        <List component="div" disablePadding>
-                            <ListItem button className={classes.nestedGood}>
-                                <ListItemIcon>
-                                    <BuildIcon color={"action"}/>
-                                </ListItemIcon>
-
-                                <div>
-                                    <ListItemText primary="Engine work"/>
-                                    <ListItemText secondary={"Total State: 88%"}/>
-                                </div>
-
-                                <IconButton color="inherit" style={{padding: 0, margin: "auto"}}>
-                                    <Badge badgeContent={1} color="secondary">
-                                        <NavLink to='/events'>
-                                            <NotificationsIcon color={"action"} className='header__icons'/>
-                                        </NavLink>
-                                    </Badge>
-                                </IconButton>
-                            </ListItem>
-
-                            <ListItem button className={classes.nestedWarning}>
-                                <ListItemIcon>
-                                    <BuildIcon color={"action"}/>
-                                </ListItemIcon>
-
-                                <div>
-                                    <ListItemText primary="Fuel sensor"/>
-                                    <ListItemText secondary={"Total State: 58%"}/>
-                                </div>
-
-                                <IconButton color="inherit" style={{padding: 0, margin: "auto"}}>
-                                    <Badge badgeContent={3} color="secondary">
-                                        <NavLink to='/events'>
-                                            <NotificationsIcon color={"action"} className='header__icons'/>
-                                        </NavLink>
-                                    </Badge>
-                                </IconButton>
-                            </ListItem>
-
-                            <ListItem button className={classes.nestedReplace}>
-                                <ListItemIcon>
-                                    <BuildIcon color={"action"}/>
-                                </ListItemIcon>
-
-                                <div>
-                                    <ListItemText primary="Oxygen sensor"/>
-                                    <ListItemText secondary={"Total State: 26%"}/>
-                                </div>
-
-                                <IconButton color="inherit" style={{padding: 0, margin: "auto"}}>
-                                    <Badge badgeContent={19} color="secondary">
-                                        <NavLink to='/events'>
-                                            <NotificationsIcon color={"action"} className='header__icons'/>
-                                        </NavLink>
-                                    </Badge>
-                                </IconButton>
-                            </ListItem>
-                        </List>
-                    </Collapse>
-
-
                 </List>
             </div>
         </Drawer>
+
+
     )
 }
