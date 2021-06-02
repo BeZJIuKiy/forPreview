@@ -98,7 +98,7 @@ export const NewTabs = () => {
                 </Tabs>
             </AppBar>
             <TabPanel value={value} index={0}>
-                Item One
+                Engine 01
             </TabPanel>
             <TabPanel value={value} index={1}>
                 Item Two
