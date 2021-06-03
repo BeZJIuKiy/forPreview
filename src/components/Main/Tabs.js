@@ -101,12 +101,11 @@ export const NewTabs = () => {
 						<div style={{
 							display: "flex",
 							flexDirection: "row",
-							// justifyContent: "space-between",
 							justifyContent: "flex-end",
 							marginTop: 20,
 						}}>
 							<div>
-								<Button variant="contained" color="secondary">
+								<Button variant="contained" color="secondary" style={{marginBottom: 10}}>
 									Show prediction
 								</Button>
 							</div>

@@ -18,13 +18,19 @@ import Icon from "@mdi/react";
 import SettingsIcon from '@material-ui/icons/Settings';
 import {DateRangeR} from "../DateRange";
 import Button from '@material-ui/core/Button';
+import {Graph} from "../Graph";
 import {Checkbox, FormControlLabel} from "@material-ui/core";
-import {DevicesTable} from "../DevicesTable";
-import {Graph_02} from "./Graph_02";
+import {DevicesTablePred} from "./DevicesTablePred";
 
 const EngineIcon = () => (
 	<Icon path={mdiEngine}
+		// title="User Profile"
 		  size={1}
+		// horizontal
+		// vertical
+		// rotate={90}
+		// color="red"
+		// spin
 	/>
 );
 
@@ -71,7 +77,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 // export default function ScrollableTabsButtonForce() {
-export const NewTabs_02 = () => {
+export const TabsPred = () => {
 	const classes = useStyles();
 	const [value, setValue] = React.useState(0);
 	const [object, setObject] = useState(<div/>);
@@ -95,13 +101,12 @@ export const NewTabs_02 = () => {
 						<div style={{
 							display: "flex",
 							flexDirection: "row",
-							// justifyContent: "space-between",
 							justifyContent: "flex-end",
 							marginTop: 20,
 						}}>
 							<div>
-								<Button variant="contained" color="secondary">
-									Show prediction
+								<Button variant="contained" style={{marginBottom: 10, background: "#00CC66"}}>
+									Hide prediction
 								</Button>
 							</div>
 						</div>
@@ -112,7 +117,7 @@ export const NewTabs_02 = () => {
 									display: "flex",
 									justifyContent: "center",
 								}}>
-									<Graph_02/>
+									<Graph/>
 								</div>
 
 								<FormControlLabel
@@ -122,7 +127,7 @@ export const NewTabs_02 = () => {
 							</div>
 
 							<div style={{alignItems: "flex-end"}}>
-								<DevicesTable/>
+								<DevicesTablePred/>
 							</div>
 						</div>
 					</div>

@@ -4,6 +4,7 @@ import {Main} from "./components/Main/Main";
 import {Signin} from "./components/Auth/Signin"
 import {Signup} from "./components/Auth/Signup";
 import {Charts} from "./components/Main/Charts";
+import {Prediction} from "./components/Main/Prediction/Prediction";
 
 function App() {
     return (
@@ -13,7 +14,8 @@ function App() {
                 <Route path={"/signup"} component={Signup}/>
 
                 <Route exact path={"/"} component={Main}/>
-                {/*<Route exact path={"/charts"} component={Charts}/>*/}
+                <Route exact path={"/charts"} component={Charts}/>
+                <Route exact path={"/prediction"} component={Prediction}/>
 
             </BrowserRouter>
         </div>

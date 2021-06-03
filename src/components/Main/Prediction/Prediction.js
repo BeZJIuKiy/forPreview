@@ -1,6 +1,6 @@
 import {Header} from "../Header";
 import {MainDrawer} from "../MainDrawer";
-import {NewTabs} from "../Tabs";
+import {TabsPred} from "./TabsPred";
 
 
 export const Prediction = () => {
@@ -8,8 +8,7 @@ export const Prediction = () => {
 		<div>
 			<Header/>
 			<MainDrawer/>
-			<NewTabs />
-			{/*<Graph />*/}
+			<TabsPred />
 		</div>
 	)
 }
