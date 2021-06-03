@@ -13,7 +13,7 @@ function App() {
                 <Route path={"/signup"} component={Signup}/>
 
                 <Route exact path={"/"} component={Main}/>
-                <Route exact path={"/charts"} component={Charts}/>
+                {/*<Route exact path={"/charts"} component={Charts}/>*/}
 
             </BrowserRouter>
         </div>

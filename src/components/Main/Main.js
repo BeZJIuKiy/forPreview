@@ -1,14 +1,14 @@
 import React from "react"
 import {Header} from "./Header";
 import {MainDrawer} from "./MainDrawer";
-import {YaMap} from "./YaMap";
+import {NewTabs_02} from "./Prediction/Tabs_02";
 
 export const Main = () => {
     return (
         <div>
             <Header/>
             <MainDrawer/>
-            <YaMap/>
+            <NewTabs_02 />
         </div>
     )
 }

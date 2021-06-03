@@ -1,7 +1,6 @@
 import React from "react"
 import {Header} from "./Header";
 import {MainDrawer} from "./MainDrawer";
-import {YaMap} from "./YaMap";
 import ListItemText from "@material-ui/core/ListItemText";
 import {Graph} from "./Graph";
 import {NewTabs} from "./Tabs";

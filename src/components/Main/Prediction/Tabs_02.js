@@ -16,21 +16,15 @@ import Box from '@material-ui/core/Box';
 import {mdiEngine} from '@mdi/js';
 import Icon from "@mdi/react";
 import SettingsIcon from '@material-ui/icons/Settings';
-import {DateRangeR} from "./DateRange";
+import {DateRangeR} from "../DateRange";
 import Button from '@material-ui/core/Button';
-import {Graph} from "./Graph";
 import {Checkbox, FormControlLabel} from "@material-ui/core";
-import {DevicesTable} from "./DevicesTable";
+import {DevicesTable} from "../DevicesTable";
+import {Graph_02} from "./Graph_02";
 
 const EngineIcon = () => (
 	<Icon path={mdiEngine}
-		// title="User Profile"
 		  size={1}
-		// horizontal
-		// vertical
-		// rotate={90}
-		// color="red"
-		// spin
 	/>
 );
 
@@ -77,7 +71,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 // export default function ScrollableTabsButtonForce() {
-export const NewTabs = () => {
+export const NewTabs_02 = () => {
 	const classes = useStyles();
 	const [value, setValue] = React.useState(0);
 	const [object, setObject] = useState(<div/>);
@@ -118,7 +112,7 @@ export const NewTabs = () => {
 									display: "flex",
 									justifyContent: "center",
 								}}>
-									<Graph/>
+									<Graph_02/>
 								</div>
 
 								<FormControlLabel
