@@ -57,7 +57,7 @@ const data = [
 
 const renderColorfulLegendText = (value, entry) => {
 	const {color} = entry;
-	console.log(value)
+	// console.log(value)
 
 	return <span
 		style={{color}}
@@ -69,25 +69,33 @@ const renderColorfulLegendText = (value, entry) => {
 
 export const Graph = () => (
 	<LineChart
-		label={"123"}
 		width={1608}
 		height={300}
 		data={data}
 		margin={{top: -20, right: 20, bottom: 5, left: 0}}
 	>
-		<Line type="monotone" dataKey={MFS} stroke="#F08080" />
-		<Line type="monotone" dataKey={MFS_PRED} stroke="#DC143C" />
+		{/*<Line type="monotone" dataKey={MFS} stroke="#F08080" />*/}
+		{/*<Line type="monotone" dataKey={MFS_PRED} stroke="#DC143C" />*/}
 
-		<Line type="monotone" dataKey={CTS} stroke="#FF8C00" />
-		<Line type="monotone" dataKey={CTS_PRED} stroke="#FFD700" />
+		{/*<Line type="monotone" dataKey={CTS} stroke="#FF8C00" />*/}
+		{/*<Line type="monotone" dataKey={CTS_PRED} stroke="#FFD700" />*/}
 
-		<Line type="monotone" dataKey={KS} stroke="#ADD8E6" />
-		<Line type="monotone" dataKey={KS_PRED} stroke="#4169E1" />
+		{/*<Line type="monotone" dataKey={KS} stroke="#ADD8E6" />*/}
+		{/*<Line type="monotone" dataKey={KS_PRED} stroke="#4169E1" />*/}
 
 
-		{/*<Line type="monotone" dataKey={MFS} stroke="#DC143C"/>*/}
-		{/*<Line type="monotone" dataKey={CTS} stroke="#FFD700"/>*/}
-		{/*<Line type="monotone" dataKey={KS} stroke="#4169E1"/>*/}
+		<Line type="monotone" dataKey={MFS} stroke="#DC143C"/>
+		<Line type="monotone" dataKey={MFS_PRED} stroke="#F08080"/>
+
+
+		<Line type="monotone" dataKey={CTS} stroke="#FF8C00"/>
+		<Line type="monotone" dataKey={CTS_PRED} stroke="#FFD700"/>
+
+
+		<Line type="monotone" dataKey={KS} stroke="#4169E1"/>
+		<Line type="monotone" dataKey={KS_PRED} stroke="#ADD8E6"/>
+
+
 		<CartesianGrid stroke="#ccc" strokeDasharray="5 5"/>
 		<XAxis dataKey="t"/>
 		<YAxis/>

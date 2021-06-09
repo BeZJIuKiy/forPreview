@@ -819,9 +819,7 @@ const useStyles = makeStyles((theme) => ({
 export const DevicesTablePred = () => {
 	const rows = [];
 
-	tableData.map(d => rows.push(d))
-	console.log(rows)
-
+	tableData.map(d => rows.push(d));
 
 	const classes = useStyles();
 	const [order, setOrder] = React.useState('asc');

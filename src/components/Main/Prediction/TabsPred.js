@@ -16,11 +16,11 @@ import Box from '@material-ui/core/Box';
 import {mdiEngine} from '@mdi/js';
 import Icon from "@mdi/react";
 import SettingsIcon from '@material-ui/icons/Settings';
-import {DateRangeR} from "../DateRange";
 import Button from '@material-ui/core/Button';
 import {Graph} from "../Graph";
 import {Checkbox, FormControlLabel} from "@material-ui/core";
 import {DevicesTablePred} from "./DevicesTablePred";
+import {DateRangePred} from "./DateRangePred";
 
 const EngineIcon = () => (
 	<Icon path={mdiEngine}
@@ -74,6 +74,10 @@ const useStyles = makeStyles((theme) => ({
 		backgroundColor: theme.palette.background.paper,
 		margin: "4px 0px 0px 270px",
 	},
+
+	test: {
+		background: "red",
+	}
 }));
 
 // export default function ScrollableTabsButtonForce() {
@@ -95,7 +99,7 @@ export const TabsPred = () => {
 				return (
 					<div style={{display: "flex", flexDirection: "column"}}>
 						<div style={{display: "flex", justifyContent: "flex-end"}}>
-							<DateRangeR/>
+							<DateRangePred/>
 						</div>
 
 						<div style={{
