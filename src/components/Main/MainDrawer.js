@@ -27,6 +27,7 @@ import IconButton from "@material-ui/core/IconButton";
 import DirectionsBoatIcon from '@material-ui/icons/DirectionsBoat';
 import {SearcherObjects} from "./Searcher";
 import {CustomizedProgressBars} from "./ProgressBar";
+import VolumeUpIcon from '@material-ui/icons/VolumeUp';
 
 
 const drawerWidth = 270;
@@ -116,7 +117,16 @@ export const MainDrawer = () => {
                             <AssessmentOutlinedIcon color={"action"} />
                         </ListItemIcon>
                         <div className={classes.root}>
-                            <ListItemText primary="Current data / Prediction" />
+                            <ListItemText primary="Prediction / Current data" />
+                        </div>
+                    </ListItem>
+
+                    <ListItem button onClick={handleClick}>
+                        <ListItemIcon>
+                            <VolumeUpIcon color={"action"} />
+                        </ListItemIcon>
+                        <div className={classes.root}>
+                            <ListItemText primary="Audio Sensor" />
                         </div>
                     </ListItem>
                 </List>

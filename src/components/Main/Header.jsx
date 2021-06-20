@@ -78,7 +78,7 @@ export const Header = () => {
                         {"AI-Platform"}
                     </NavLink>
 
-                    <div style={{color: "black"}}>Ship 01</div>
+                    <div style={{color: "black"}}>Gas Fittings 01</div>
                     <IconButton>
                         <ArrowDropDownIcon/>
                     </IconButton>

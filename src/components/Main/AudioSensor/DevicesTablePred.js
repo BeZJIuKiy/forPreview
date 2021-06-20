@@ -33,21 +33,18 @@ const MFS_PRED = 'PRED: Mass flow sensor';
 const CTS_PRED = 'PRED: Coolant temperature sensor';
 const KS_PRED = 'PRED: Knock sensor';
 
-// const name01 = "Out Pressure";
-// const name01_pred = "PREDICTION: Out Pressure";
-
-const name01 = "Vibration";
-const name01_pred = "PREDICTION: Vibration";
+const name01 = "Out Pressure";
+const name01_pred = "PREDICTION: Out Pressure";
 
 const preparedData = () => dataForGraph.map((data) => ({
         id: idCounter++,
 		time: data.t,
 		date: "31.05.2019",
-		name: "Vibration",
+		name: name01_pred,
 		data: data[name01],
 		predData: data[name01_pred],
 		precision: (1-(data[name01] / data[name01_pred])) * 100,
-		note: "Normal state",
+		note: "Normal condition. No sudden pressure drops expected.",
     })
 );
 
@@ -657,9 +654,9 @@ const headCells = [
     {id: 'time', numeric: false, disablePadding: true, label: ' Time'},
     {id: 'date', numeric: false, disablePadding: true, label: ' Date'},
     {id: 'name', numeric: false, disablePadding: false, label: 'Sensor name'},
-    // {id: 'data', numeric: false, disablePadding: false, label: 'Data'},
+    {id: 'data', numeric: false, disablePadding: false, label: 'Data'},
     {id: 'predData', numeric: false, disablePadding: false, label: 'Predictive Data'},
-    // {id: 'precision', numeric: false, disablePadding: false, label: 'Precision, %'},
+    {id: 'precision', numeric: false, disablePadding: false, label: 'Precision, %'},
     {id: 'note', numeric: false, disablePadding: false, label: 'Note'},
 
 ];
@@ -757,7 +754,7 @@ const EnhancedTableToolbar = (props) => {
             ) : (
                 <Typography className={classes.title} variant="h6" id="tableTitle" component="div">
                     {/* Events - это заголовок таблицы */}
-                    Vibration Sensor 01
+                    Out Pressure Sensor 01
                 </Typography>
             )}
 
@@ -952,9 +949,9 @@ export const DevicesTablePred = () => {
                                             <TableCell align="left">{row.time}</TableCell>
                                             <TableCell align="left">{row.date}</TableCell>
                                             <TableCell align="left">{row.name}</TableCell>
-                                            {/*<TableCell align="left">{row.data}</TableCell>*/}
+                                            <TableCell align="left">{row.data}</TableCell>
                                             <TableCell align="left">{row.predData}</TableCell>
-                                            {/*<TableCell align="left">{row.precision}</TableCell>*/}
+                                            <TableCell align="left">{row.precision}</TableCell>
                                             <TableCell align="left">{row.note}</TableCell>
                                         </TableRow>
                                     );

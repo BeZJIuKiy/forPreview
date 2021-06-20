@@ -5,6 +5,7 @@ import {Signin} from "./components/Auth/Signin"
 import {Signup} from "./components/Auth/Signup";
 import {Charts} from "./components/Main/Charts";
 import {Prediction} from "./components/Main/Prediction/Prediction";
+import {AudioSensor} from "./components/Main/AudioSensor/AudioSensor";
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
                 <Route exact path={"/"} component={Main}/>
                 <Route exact path={"/charts"} component={Charts}/>
                 <Route exact path={"/prediction"} component={Prediction}/>
+                <Route exact path={"/audio"} component={AudioSensor}/>
 
             </BrowserRouter>
         </div>

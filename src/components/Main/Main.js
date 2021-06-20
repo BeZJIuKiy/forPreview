@@ -6,8 +6,8 @@ import {Notifications} from "./Notification";
 export const Main = () => {
     return (
         <div>
-            {/*<Header/>*/}
-            {/*<MainDrawer/>*/}
+            <Header/>
+            <MainDrawer/>
             <Notifications/>
         </div>
     )
