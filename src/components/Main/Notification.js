@@ -78,7 +78,7 @@ export const Notifications = () => {
 	                            {"АСНКВ"}
                             </h3>
 	                        {/*<div className={classes.message}>{"Attention! Exceeding the emission of ammonia!"}</div>*/}
-	                        <div>{"Внимание! Превышение по выбросу серы!"}</div>
+	                        <div>{"Внимание! Превышение по выбросу SO2 (диоксид серы)!"}</div>
                         </div>
 
 						<div style={{
@@ -90,7 +90,7 @@ export const Notifications = () => {
 							{/*<div>Time: 12:06</div>*/}
 							{/*<div>Date: 31.05.2019</div>*/}
 
-							<div>Время: 12:06</div>
+							<div>Время: 12:08</div>
 							<div>Дата: 31.05.2019</div>
 						</div>
 
